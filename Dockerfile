@@ -1,5 +1,7 @@
-FROM ruby:2.3-slim
+FROM alpine:3.3
 MAINTAINER Linki <linki+docker.com@posteo.de>
+
+RUN apk add --no-cache ruby ruby-bundler ruby-io-console
 
 RUN bundle config --global frozen 1
 
