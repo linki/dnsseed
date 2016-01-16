@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    net-dns (0.8.0)
+    net-ping (1.7.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  net-dns (~> 0.8.0)
+  net-ping (~> 1.7.8)
+
+BUNDLED WITH
+   1.11.2
