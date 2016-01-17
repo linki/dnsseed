@@ -16,15 +16,18 @@ nodes = resolver.answer.size
 
 puts "#{nodes} active nodes"
 
-if nodes > 0 && port > 0
+if nodes > 0
   puts
   resolver.each_address do |ip|
-    print "#{ip} is "
-    if Net::Ping::TCP.new(ip.to_s, port, timeout).ping
-      puts "alive"
-    else
-      puts "unresponsive"
+    print ip
+    if port > 0
+      if Net::Ping::TCP.new(ip.to_s, port, timeout).ping
+        print " is alive"
+      else
+        print " is unresponsive"
+      end
     end
+    puts
   end
 end
 
